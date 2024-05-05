@@ -1,4 +1,16 @@
 <script setup>
+/**
+ * counter 最小值是 0
+ */
+import { ref } from 'vue'
+
+const counter = ref(0)
+
+const changeCounter = (value) => {
+    counter.value += value
+
+    counter.value = counter.value < 0 ? 0 : counter.value;
+}
 
 </script>
 
@@ -10,11 +22,11 @@
                 <h2>Counter App</h2>
             </div>
             <div class="content">
-                <span class="counter">0</span>
+                <span class="counter">{{ counter }}</span>
                 <div class="btn-group">
-                    <button id="btnSubtract">Subtract</button>
-                    <button id="btnReset">Reset</button>
-                    <button id="btnAdd">Add</button>
+                    <button id="btnSubtract" v-on:click.prevent="changeCounter(-1)">Subtract</button>
+                    <button id="btnReset" v-on:click.prevent="counter = 0">Reset</button>
+                    <button id="btnAdd" v-on:click.prevent="changeCounter(1)">Add</button>
                 </div>
                     
 
