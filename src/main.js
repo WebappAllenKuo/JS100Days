@@ -7,7 +7,7 @@ import App from "./App.vue";
 
 import router from "./router/";
 
-console.info("router", router);
+//console.info("router", router);
 
 const app = createApp(App);
 app.use(router);

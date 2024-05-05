@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView, useRouter, useRoute } from 'vue-router'
-const days = 3;
+const days = 4;
 
 const router = useRouter()
 

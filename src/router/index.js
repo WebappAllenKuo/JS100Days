@@ -11,13 +11,13 @@ const routes = [
   // },
 ];
 
-const end = 3;
+const end = 4;
 for (let i = 1; i <= end; i++) {
   const path = i.toString().padStart(2, "0");
   const componentFile = `../Pages/Page${path}.vue`;
 
   const setting = { path: "/d" + path, component: () => import(componentFile) };
-  console.info("setting=", setting);
+  // console.info("setting=", setting);
 
   routes.push(setting);
 }
