@@ -15,3 +15,11 @@ ref : https://stackoverflow.com/questions/65547199/using-bootstrap-5-with-vue-3
 npm install --save bootstrap
 npm install --save @popperjs/core
 ```
+
+## Day01 - Counter App
+
+可增加, 減少, 歸零, counter 最小值是 零
+
+## Day02 - Random Number Generator
+
+取得[0, 99] 亂數
