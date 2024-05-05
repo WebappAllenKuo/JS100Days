@@ -1,4 +1,19 @@
 <script setup >
+import { ref } from 'vue'
+
+const color = ref({ r: 0, g: 0, b: 0 });
+const hex=ref('#000000');
+
+
+const handleGenerate = ()=>{ 
+    for (let key in color.value) {
+        color.value[key] = Math.floor(Math.random() * 255);
+    }
+
+    hex.value = `#${color.value.r.toString(16)}${color.value.g.toString(16)}${color.value.b.toString(16)}`;
+
+    window.document.body.style.backgroundColor = hex.value;
+}
 
 </script>
 
@@ -9,9 +24,9 @@
                 <h2 class="text-center mb-3">Random Hex Color Gen</h2>
             </div>
             <div class="content">
-                <div class="hex-color text-center">#ababab</div>
+                <div class="hex-color text-center" :style="{color:hex}">{{ hex }}</div>
                 <div class="btn-group">
-                    <button >Generate Color</button>
+                    <button v-on:click.prevent="handleGenerate" >Generate Color</button>
                 </div>
             </div>  
         </div>

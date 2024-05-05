@@ -26,4 +26,6 @@ npm install --save @popperjs/core
 
 ## Day03 - Random Hex Color Gen
 
-生成隨機背景色
+一開始是白色背景, button click 時, 生成隨機色, 並應用在文字及網頁背景
+
+- xx.toString(16), 可以將數值轉成十六進制的字串(小寫)
