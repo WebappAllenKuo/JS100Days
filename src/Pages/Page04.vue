@@ -1,5 +1,16 @@
 <script setup>
+import { ref } from 'vue';
 
+const modelVisible = ref(false);
+
+const openModal=()=>{ 
+    modelVisible.value = true;
+}
+const closeModal = () => {
+    console.info("close modal");
+
+    modelVisible.value = false;
+}
 </script>
 
 <template>
@@ -7,16 +18,16 @@
         <h1><span>Let's</span> Create a Modal</h1>
         <div>Click Button Below</div>
         <div class="btn-group">
-            <button>TEST POPUP</button>
+            <button v-on:click.prevent="openModal">TEST POPUP</button>
         </div>
     </div>
-    <div class="mymodal hide">
+    <div class="mymodal" v-show="modelVisible">
         <div class="content">
             <div class="header">
                 <h1>Hello World</h1>
             </div>
             <div>
-                <img id=close src="../assets/cross.jpg" />
+                <img id=close src="../assets/cross.jpg" @click.prevent="closeModal" />
             </div>
             <div class="modal-body">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis,
@@ -94,6 +105,8 @@ body{
             top:1rem;
             right:1rem;
             width:3rem;
+
+            cursor: pointer;
         }
     }
 }
