@@ -23,3 +23,7 @@ npm install --save @popperjs/core
 ## Day02 - Random Number Generator
 
 取得[0, 99] 亂數
+
+## Day03 - Random Hex Color Gen
+
+生成隨機背景色

@@ -11,7 +11,7 @@ const routes = [
   // },
 ];
 
-const end = 2;
+const end = 3;
 for (let i = 1; i <= end; i++) {
   const path = i.toString().padStart(2, "0");
   const componentFile = `../Pages/Page${path}.vue`;
