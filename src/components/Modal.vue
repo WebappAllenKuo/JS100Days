@@ -1,31 +1,23 @@
-<script setup>
-import { ref } from 'vue';
-import Modal from '../components/Modal.vue';
+<script setup lang="ts">
+import { ref, defineProps } from 'vue';
 
-const modalVisible = ref(false);
+defineProps({
+    modelVisible: Boolean
+})
 
 const openModal=()=>{ 
-    modalVisible.value = true;
-
+    modelVisible.value = true;
 }
 const closeModal = () => {
-    // console.info("close modal");
+    console.info("close modal");
 
-    // modelVisible.value = false;
-    modalVisible.value = false;
+    modelVisible.value = false;
 }
 </script>
 
 <template>
-    <div class="container">
-        <h1><span>Let's</span> Create a Modal</h1>
-        <div>Click Button Below</div>
-        <div class="btn-group">
-            <button v-on:click.prevent="openModal">TEST POPUP</button>
-        </div>
-    </div>
-    <Modal />
-    <div class="mymodal" v-show="modalVisible">
+    <div>
+        <div class="mymodal" v-show="modelVisible">
         <div class="content">
             <div class="header">
                 <h1>Hello World</h1>
@@ -40,40 +32,10 @@ const closeModal = () => {
             </div>
         </div>
     </div>
+    </div>
 </template>
 
-<style >
-body{
-    background-color: rgba(39, 39, 134, 0.575);
-}
-.container{
-    width:800px;
-    height: 100vh;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-    color:white;
-
-    h1>span{
-        font-weight: 700;
-        font-size:1.2em;
-    }
-
-    .btn-group{
-        margin-top: 2rem;
-        button{
-            padding: 10px 20px;
-            background-color: #f1f1f1;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    }
-}
-
+<style scoped>
 .mymodal{
     /* display: none; */
     
@@ -114,8 +76,4 @@ body{
         }
     }
 }
-.hide{
-    display: none;
-}
-   
 </style>
